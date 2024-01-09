@@ -65,12 +65,12 @@ jobs:
        if: (env.LABEL == 'Lab 3' || env.LABEL == 'Lab 4') && ( env.GROUP == '6211' || env.GROUP == '6212' )
        uses: hkusu/review-assign-action@v1
        with:
-          assignees: ${{ github.actor}}
+          assignees: ${{ github.actor }}
           reviewers: ladyitsecurity    
 
      - name: Setting reviewer & assignee for lab 3 & 4
        if: (env.LABEL == 'Lab 3' || env.LABEL == 'Lab 4') && ( env.GROUP == '6213' || env.GROUP == '6214' )
        uses: hkusu/review-assign-action@v1
        with:
-          assignees: ${{ github.actor}}
+          assignees: ${{ github.actor }}
           reviewers: Daria-creator-lab    
