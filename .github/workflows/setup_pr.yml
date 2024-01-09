@@ -74,3 +74,6 @@ jobs:
        with:
           assignees: ${{ github.actor }}
           reviewers: Daria-creator-lab    
+
+     - name: Display results
+       run: echo '${{ steps.assign.outputs.result }}'
