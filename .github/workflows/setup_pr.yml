@@ -63,7 +63,7 @@ jobs:
           
      - name: Setting reviewer & assignee for lab 3 & 4
        if: (env.LABEL == 'Lab 3' || env.LABEL == 'Lab 4') && ( env.GROUP == '6211' || env.GROUP == '6212' )
-       uses: AveryCameronUofR/add-reviewer-gh-action@1.0.31
+       uses: AveryCameronUofR/add-reviewer-gh-action@1.0.3
        with:
           reviewers: "ladyitsecurity"    
 
