@@ -1,0 +1,5 @@
+{
+    "folder" : "text_files",
+    "incoming_text" : "text_for_encryption_task1",
+    "outgoing_text" : "encrypted_text_for_task1"
+}
