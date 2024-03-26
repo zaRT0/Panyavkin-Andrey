@@ -1,4 +1,4 @@
-polybel_square = [
+POLYBEL_SQUARE = [
     ["а", "б", "в", "г", "д", "е"],
     ["ж", "з", "и", "й", "к", "л"],
     ["м", "н", "о", "п", "р", "с"],
@@ -7,6 +7,7 @@ polybel_square = [
     ["ю", "я", "ё", " ", " ", " "],
 ]
 
-punctuation_marks = {".", ","}
+PATHS = "task_1\paths.json" 
 
-paths = "folder_path.json"
+PUNCTUATION_MARKS = {".", ",", "—"}
+
