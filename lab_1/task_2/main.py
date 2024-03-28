@@ -2,7 +2,7 @@ import os
 import json
 
 from work_with_json2 import read_json_file
-from key import PATHS2, ALPHABET
+from constants2 import PATHS2, KEY
 from frequency import read_text_file
 
 
@@ -40,7 +40,7 @@ def main() -> None:
 
             text = read_text_file(input_file_path)
             if text:
-                decrypted_text = decrypt_text(text, ALPHABET)
+                decrypted_text = decrypt_text(text, KEY)
                 if decrypted_text:
                     print(decrypted_text)
                     with open(output_file_path, "w", encoding="utf-8") as file:

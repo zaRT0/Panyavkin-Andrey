@@ -1,6 +1,6 @@
 PATHS2 = "task_2\paths2.json"
 
-ALPHABET = {
+KEY = {
     "М": " ",
     "Е": "О",
     "У": "И",

@@ -2,8 +2,7 @@ import os
 import json
 
 from work_with_json2 import read_json_file
-from key import PATHS2
-
+from constants2 import PATHS2
 from collections import Counter, defaultdict
 
 
@@ -47,7 +46,7 @@ def main():
             folder_path = json_data.get("folder")
             input_file = json_data.get("input")
 
-            input_file_path = folder_path + "/" + input_file
+            input_file_path = f"{folder_path}/{input_file}"
 
             text = read_text_file(input_file_path)
             if text:
