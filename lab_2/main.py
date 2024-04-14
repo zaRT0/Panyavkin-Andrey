@@ -93,9 +93,9 @@ def main():
         p_value_long_sequence_units_test = long_sequence_units_test(sequence)
         print(f"Язык: {language}")
         print(f"p-value frequency_bit_test: {p_value_frequency_bit_test}")
-        print(f"p-value calculate_p_value: {p_value_consecutive_bits_test}")
+        print(f"p-value p_value_consecutive_bits_test: {p_value_consecutive_bits_test}")
         print(
-            f"p-value calculate_p_value_from_sequence: {p_value_long_sequence_units_test}"
+            f"p-value p_value_long_sequence_units_test: {p_value_long_sequence_units_test}"
         )
         print()
 
