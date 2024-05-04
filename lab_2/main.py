@@ -34,15 +34,14 @@ def frequency_bit_test(sequence: str) -> float:
     try:
         N = len(sequence)
         Sn = sum(1 if bit == "1" else -1 for bit in sequence) / sqrt(N)
-        p_value = erfc(Sn / sqrt(2))
+        p_value = erfc(abs(Sn) / sqrt(2))
         return p_value
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
 
-
 def consecutive_bits_test(sequence: str) -> float:
-    """
+    """ы
     consecutive bit test function
     param: sequence as str
     return: p-value
