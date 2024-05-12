@@ -39,3 +39,4 @@ def deserialize_asymmetric_private_key(private_pem: str):
     with open(private_pem, 'rb') as pem_in:
         private_bytes = pem_in.read()
     d_private_key = load_pem_private_key(private_bytes,password=None,)
+    return d_private_key
