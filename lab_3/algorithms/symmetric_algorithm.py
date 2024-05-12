@@ -3,9 +3,16 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 
-from algorithms.reading_and_writing_data import read_key_bytes, read_text_file, write_key_bytes, write_text_file
+from algorithms.reading_and_writing_data import (
+    read_key_bytes,
+    read_text_file,
+    write_key_bytes,
+    write_text_file,
+)
 
-from algorithms.serialization_and_deserialization_of_keys import deserialize_symmetric_key_to_file
+from algorithms.serialization_and_deserialization_of_keys import (
+    deserialize_symmetric_key_to_file,
+)
 
 
 class SymmetricAlgorithm:

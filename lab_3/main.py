@@ -2,6 +2,7 @@ import argparse
 
 from algorithms.asymmetric_algorithm import AsymmetricAlgorithm
 from algorithms.symmetric_algorithm import SymmetricAlgorithm
+from algorithms.serialization_and_deserialization_of_keys import Serialization
 from algorithms.serialization_and_deserialization_of_keys import (
     serialize_symmetric_key_to_file,
     serialize_asymmetric_public_key,
