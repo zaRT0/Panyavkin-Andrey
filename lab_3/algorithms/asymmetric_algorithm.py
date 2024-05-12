@@ -8,7 +8,6 @@ from serialization_and_deserialization_of_keys import (
     deserialize_asymmetric_private_key,
     deserialize_symmetric_key_to_file,
     serialize_symmetric_key_to_file,
-    write_key_bytes,
 )
 
 

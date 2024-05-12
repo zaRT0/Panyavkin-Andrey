@@ -1,10 +1,10 @@
 {
-    "initial_file":"path/to/inital/file.txt",
-    "encrypted_file":"path/to/encrypted/file.txt",
-    "decrypted_file":"path/to/decrypted/file.txt",
-    "symmetric_key":"path/to/symmetric/key.txt",
-    "decrypted_symmetric_key": "",
-    "encrypted_symmetric_key" : "",
-    "public_key":"path/to/public/key.pem",
-    "secret_key":"path/to/secret/key.pem"
+    "initial_file":"lab_3/source_text/source_file.txt",
+    "encrypted_file":"lab_3/source_text/encrypted_text.txt",
+    "decrypted_file":"lab_3/source_text/decrypted_text.txt",
+    "symmetric_key":"lab_3/symmetric_key/source_symmetric_key",
+    "decrypted_symmetric_key": "lab_3/symmetric_key/decrypted_key.txt",
+    "encrypted_symmetric_key" : "lab_3/symmetric_key/encrypted_key.txt",
+    "asymmetric_public_key":"lab_3/asymmetric_key/public_key.pem",
+    "asymmetric_private_key":"lab_3/asymmetric_key/private_key.pem"
 }
