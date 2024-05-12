@@ -12,7 +12,8 @@ def serialize_symmetric_key_to_file(file_path: str, key: bytes):
 
 def deserialize_symmetric_key_to_file(file_path: str):
     with open(file_path, mode="rb") as key_file:
-        return key_file.read()
+        d_symmetric_key = key_file.read()
+        return d_symmetric_key
     
 
 def serialize_asymmetric_public_key(public_pem: str, public_key: rsa.RSAPublicKey):
