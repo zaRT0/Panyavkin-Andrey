@@ -1,10 +1,10 @@
 {
-    "initial_file":"./source_text/source_file.txt",
-    "encrypted_file":"./source_text/encrypted_text.txt",
-    "decrypted_file":"./source_text/decrypted_text.txt",
-    "symmetric_key":"./symmetric_key/source_symmetric_key.txt",
+    "initial_file": "./source_text/source_file.txt",
+    "encrypted_file": "./source_text/encrypted_text.txt",
+    "decrypted_file": "./source_text/decrypted_text.txt",
+    "symmetric_key": "./symmetric_key/source_symmetric_key.txt",
     "decrypted_symmetric_key": "./symmetric_key/decrypted_key.txt",
-    "encrypted_symmetric_key" : "./symmetric_key/encrypted_key.txt",
-    "asymmetric_public_key":"./asymmetric_key/public_key.pem",
-    "asymmetric_private_key":"./asymmetric_key/private_key.pem"
+    "encrypted_symmetric_key": "./symmetric_key/encrypted_key.txt",
+    "asymmetric_public_key": "./asymmetric_key/public_key.pem",
+    "asymmetric_private_key": "./asymmetric_key/private_key.pem"
 }
