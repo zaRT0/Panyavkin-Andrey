@@ -3,16 +3,12 @@ import os
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 
-from reading_and_writing_data import (
-    read_key_bytes,
-    read_text_file,
-    write_key_bytes,
-    write_text_file,
-)
-from serialization_and_deserialization_of_keys import deserialize_symmetric_key_to_file
+from algorithms.reading_and_writing_data import read_key_bytes, read_text_file, write_key_bytes, write_text_file
+
+from algorithms.serialization_and_deserialization_of_keys import deserialize_symmetric_key_to_file
 
 
-class SymmetricCryptography:
+class SymmetricAlgorithm:
     def create_symmetric_key(self):
         key = os.urandom(16)
         return key
@@ -26,9 +22,9 @@ class SymmetricCryptography:
         cipher = Cipher(algorithms.SEED(symmetric_key), modes.CBC(iv))
         padder = padding.PKCS7(128).padder()
         text_on_bytes = bytes(text, "UTF-8")
-        p_text = padder.update(text) + padder.finalize()
+        p_text = padder.update(text_on_bytes) + padder.finalize()
         encryptor = cipher.encryptor()
-        encrypt_text = encryptor.update(encrypted_text_path) + encryptor.finalize()
+        encrypt_text = encryptor.update(p_text) + encryptor.finalize()
         encrypt_text = iv + encrypt_text
         write_key_bytes(encrypted_text_path, encrypt_text)
         return encrypt_text

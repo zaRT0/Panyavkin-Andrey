@@ -1,6 +1,5 @@
 import json
 
-from cryptography.hazmat.primitives.serialization import load_pem_public_key, load_pem_private_key
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 
@@ -21,7 +20,7 @@ def read_json_file(file_path: str) -> dict:
         print("Ошибка при декодировании JSON-данных.")
     except Exception as e:
         print(f"Произошла ошибка: {e}")
-        
+
 
 def read_key_bytes(file_path: str) -> bytes:
     with open(file_path, "rb") as file:
@@ -45,13 +44,13 @@ def read_text_file(file_path: str) -> str:
     except Exception as e:
         print(f"Произошла ошибка: {e}")
         return ""
-    
-    
+
+
 def write_key_bytes(file_path: str, bytes_text: bytes) -> None:
     with open(file_path, "wb") as file:
         file.write(bytes_text)
-    
-    
+
+
 def write_text_file(file_path: str, info: str) -> None:
-    with open(file_path, "w", encoding='utf-8') as file:
+    with open(file_path, "w", encoding="utf-8") as file:
         file.write(info)
