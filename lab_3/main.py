@@ -2,13 +2,8 @@ import argparse
 
 from algorithms.asymmetric_algorithm import AsymmetricAlgorithm
 from algorithms.symmetric_algorithm import SymmetricAlgorithm
-from algorithms.serialization_and_deserialization_of_keys import Serialization
-from algorithms.serialization_and_deserialization_of_keys import (
-    serialize_symmetric_key_to_file,
-    serialize_asymmetric_public_key,
-    serialize_asymmetric_private_key,
-)
-from algorithms.reading_and_writing_data import read_json_file
+from algorithms.serialization_and_deserialization_of_keys import Serializations
+from algorithms.reading_and_writing_data import Functions
 
 
 def main():
@@ -35,18 +30,20 @@ def main():
     args = parser.parse_args()
     symmetric = SymmetricAlgorithm()
     asymmetric = AsymmetricAlgorithm()
-    setting = read_json_file(args.setting)
+    setting = Functions.read_json_file(args.setting)
 
     match args:
         case args if args.generation_symmetric:
             symmetric_key = symmetric.create_symmetric_key()
-            serialize_symmetric_key_to_file(setting["symmetric_key"], symmetric_key)
+            Serializations.serialize_symmetric_key_to_file(
+                setting["symmetric_key"], symmetric_key
+            )
         case args if args.generation_asymmetric:
             public_key, private_key = asymmetric.create_asymmetric_key()
-            serialize_asymmetric_public_key(
+            Serializations.serialize_asymmetric_public_key(
                 setting["asymmetric_public_key"], public_key
             )
-            serialize_asymmetric_private_key(
+            Serializations.serialize_asymmetric_private_key(
                 setting["asymmetric_private_key"], private_key
             )
         case args if args.ecryption_text:
