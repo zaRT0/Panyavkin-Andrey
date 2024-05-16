@@ -7,6 +7,13 @@ from algorithms.serialization_and_deserialization_of_keys import Serializations
 
 
 class AsymmetricAlgorithm:
+    """
+    this class for asymmetric algorithm
+    methods: 
+        create_asymmetric_key: method for generation two asymmetric key
+        encrypt_symmetric__key_with_public_key: method for encrypt symmetric key
+        decrypt_symmetric__key_with_private_key: method for decrypt symmetric key
+    """
     def create_asymmetric_key(self) -> tuple[rsa.RSAPublicKey, rsa.RSAPrivateKey]:
         """
         generate two asymmetric key (public and private)

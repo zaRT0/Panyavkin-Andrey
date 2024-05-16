@@ -7,7 +7,18 @@ from cryptography.hazmat.primitives.serialization import (
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 
+
 class Serializations:
+    """
+    class for a serealization keys
+    methods:
+        serialize_symmetric_key_to_file: Serialize a symmetric key to a file.
+        deserialize_symmetric_key_to_file: Deserialize a symmetric key to a file.
+        serialize_asymmetric_public_key: Serialize an asymmetric public key to a PEM file
+        serialize_asymmetric_private_key: Serialize an asymmetric private key to a PEM file
+        deserialize_asymmetric_public_key: Deserialize an asymmetric public key from a PEM file.
+        deserialize_asymmetric_private_key: Deserialize an asymmetric private key from a PEM file.
+    """
     def serialize_symmetric_key_to_file(file_path: str, key: bytes) -> None:
         """
         Serialize a symmetric key to a file.
@@ -19,7 +30,6 @@ class Serializations:
                 key_file.write(key)
         except Exception as e:
             print("An error occurred:", e)
-
 
     def deserialize_symmetric_key_to_file(file_path: str) -> bytes:
         """
@@ -33,7 +43,6 @@ class Serializations:
                 return d_symmetric_key
         except Exception as e:
             print("An error occurred:", e)
-
 
     def serialize_asymmetric_public_key(
         public_pem: str, public_key: rsa.RSAPublicKey
@@ -53,7 +62,6 @@ class Serializations:
                 )
         except Exception as e:
             print("An error occurred:", e)
-
 
     def serialize_asymmetric_private_key(
         private_pem: str, private_key: rsa.RSAPrivateKey
@@ -75,7 +83,6 @@ class Serializations:
         except Exception as e:
             print("An error occurred:", e)
 
-
     def deserialize_asymmetric_public_key(public_pem: str) -> rsa.RSAPublicKey:
         """
         Deserialize an asymmetric public key from a PEM file.
@@ -89,7 +96,6 @@ class Serializations:
             return d_public_key
         except Exception as e:
             print("An error occurred:", e)
-
 
     def deserialize_asymmetric_private_key(private_pem: str) -> rsa.RSAPrivateKey:
         """

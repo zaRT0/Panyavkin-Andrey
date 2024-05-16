@@ -2,6 +2,15 @@ import json
 
 
 class Functions:
+    """
+    this class contains contains function for works with text and files
+    methods: 
+        read_json_file: reading json file
+        read_key_bytes: method for reading key
+        read_text_file: method for reading text files
+        write_key_bytes: method for a writing key
+        write_text_file: method for a writing text files
+    """
     def read_json_file(file_path: str) -> dict:
         """
         a method for reading paths from a json file
@@ -20,7 +29,8 @@ class Functions:
             print(f"Произошла ошибка: {e}")
 
     def read_key_bytes(file_path: str) -> bytes:
-        """_summary_
+        """
+        method for reading key
         parametrs: file_path as str
         return: bytes
         """

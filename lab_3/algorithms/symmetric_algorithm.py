@@ -8,6 +8,13 @@ from algorithms.serialization_and_deserialization_of_keys import Serializations
 
 
 class SymmetricAlgorithm:
+    """
+    class for a symmetric algorithm
+    methods:
+        create_symmetric_key: generate symmetric key
+        encrypting_text_using_symmetric_key: method for encrypting text by using symmetric key
+        dencrypting_text_using_symmetric_key: method for decrypting text by using symmetric key
+    """
     def create_symmetric_key(self) -> bytes:
         """
         generate key
