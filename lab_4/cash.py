@@ -22,7 +22,7 @@ class Hash:
                 if result:
                     p.terminate()
                     break
-                return result
+        return result
             
             
     def luhns_algorithm(card_number: str):
@@ -78,21 +78,13 @@ class Hash:
         plt.close()
         
         
-        
 if __name__ == "__main__":
-    # Чтение данных из JSON-файлов
     data = Functions.read_json_file(DATA)
 
-    # Получение значений из прочитанных данных
     test_hash = data.get("hash", "")
     test_last_numbers = data.get("last_four_numbers", "")
     test_bin = tuple(data.get("bin", []))
 
-    # Вызов метода create_card_number для создания номера карты
     created_card_number = Hash.create_card_number(test_hash, test_bin, test_last_numbers)
     
-    print("Созданный номер карты:", created_card_number)
-    
-        
-        
-        
+    print("Созданный номер карты:", created_card_number)      
