@@ -37,3 +37,4 @@ class Functions:
                 file.write(info)
         except Exception as e:
             print("An error occurred:", e)
+
