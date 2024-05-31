@@ -1,12 +1,14 @@
 import json
 
+
 class Functions:
     """
     this class contains contains function for works with text and files
-    methods: 
+    methods:
         read_json_file: reading json file
         write_text_file: method for a writing text files
     """
+
     def read_json_file(file_path: str) -> dict:
         """
         a method for reading paths from a json file
@@ -23,8 +25,7 @@ class Functions:
             print("Ошибка при декодировании JSON-данных.")
         except Exception as e:
             print(f"Произошла ошибка: {e}")
-            
-    
+
     def write_text_file(file_path: str, info: str) -> None:
         """
         writes text files

@@ -1,13 +1,7 @@
 import sys
 import logging
 
-from PyQt5.QtWidgets import (
-    QMainWindow,
-    QApplication,
-    QPushButton,
-    QLabel,
-    QLineEdit
-)
+from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QLabel, QLineEdit
 from PyQt5.QtGui import QPixmap
 
 from cash import Hash
@@ -19,18 +13,24 @@ logging.basicConfig(level=logging.INFO)
 
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self) -> None:
+        """Initializes the main window of the application."""
         super().__init__()
         self.initUI()
 
-    def initUI(self):
+    def initUI(self) -> None:
+        """Sets up the user interface for the main window."""
         self.setWindowTitle("Card number programm")
 
         self.background_style = f"background-color: white;"
-        self.button_style = f"background-color: gray; border: 5px solid #585A56; border-radius:10px"
+        self.button_style = (
+            f"background-color: gray; border: 5px solid #585A56; border-radius:10px"
+        )
         self.label_style = f"font-size: 16px; border-radius: 10px 10px; background-color: #C2D3DA; padding: 10px;"
         self.line_style = f"{self.label_style} color: hsla(0, 0%, 0%, 0.5);"
-        self.border_style = f"background-color: white; border: 5px solid #585A56; border-radius:20px"
+        self.border_style = (
+            f"background-color: white; border: 5px solid #585A56; border-radius:20px"
+        )
 
         self.setFixedSize(950, 750)
         self.setStyleSheet(self.background_style)
@@ -90,7 +90,8 @@ class MainWindow(QMainWindow):
         self.luhn_button.clicked.connect(self.luhns_algorithm)
         self.graphic_button.clicked.connect(self.create_graphic)
 
-    def create_card_number(self):
+    def create_card_number(self) -> None:
+        """Generates the card number based on the entered values and displays it."""
         hash_value = self.hash.text()
         last_numbers_value = self.last_numbers.text()
         bin_value = self.bin.text().split(", ")
@@ -100,7 +101,8 @@ class MainWindow(QMainWindow):
         else:
             self.card_number_line.setText("Не удалось найти номер карты")
 
-    def luhns_algorithm(self):
+    def luhns_algorithm(self) -> None:
+        """Checks the card number validity using the Luhn algorithm and displays the result."""
         card_number_value = self.luhn_card.text()
         validity = Hash.luhns_algorithm(card_number_value)
         if validity:
@@ -108,10 +110,13 @@ class MainWindow(QMainWindow):
         else:
             self.card_validity.setText("Карта недействительна")
 
-    def create_graphic(self):
+    def create_graphic(self) -> None:
+        """Creates a graph based on the data and displays it."""
         paths = Functions.read_json_file(PATH)
         data = Functions.read_json_file(DATA)
-        Hash.time_for_find_collisions(data["hash"], data["last_four_numbers"], data["bin"], paths["graphic_path"])
+        Hash.time_for_find_collisions(
+            data["hash"], data["last_four_numbers"], data["bin"], paths["graphic_path"]
+        )
         pixmap = QPixmap(paths["graphic_path"])
         self.graphic.setGeometry(80, 230, 790, 474)
         pixmap = pixmap.scaled(790, 474)
