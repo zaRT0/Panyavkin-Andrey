@@ -1,4 +1,4 @@
 {
-    "card_number": "./card_number.txt",
-    "graphic_path": "./lab_4/graphic.png"
+    "card_number": "lab_4/card_number.txt",
+    "graphic_path": "lab_4/graphic.png"
 }
