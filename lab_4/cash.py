@@ -67,7 +67,7 @@ class Hash:
         collision_time = [[], []]
         for cores in range(1, int(mp.cpu_count() * 1.5)):
             start = time.time()
-            with mp.Pool(processes=mp.cpu_count()) as p:
+            with mp.Pool(cores) as p:
                 for result in p.starmap(
                     Hash.card_number_checking,
                     (
